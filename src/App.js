@@ -13,7 +13,18 @@ export default function App() {
     setTodoList(newTodoList);
   };
 
-  const deleteTask = () =>{};
+  const deleteTask = (taskName) =>{
+    const newTodoList = todoList.filter((task)=> {
+      if (task === taskName){
+        return false;
+      }else {
+        return true;
+      }
+    })
+    setTodoList(newTodoList);
+  };
+
+
 
   return (
     <div className="App">
@@ -24,9 +35,9 @@ export default function App() {
       <div className="list">
         {todoList.map((task) =>{
           return(
-            <div>
-              <h1>{task}</h1>
-              <button onClick={deleteTask}>x</button>
+            <div className="task">
+              <h1>{task.taskName}</h1>
+              <button onClick={() => deleteTask(task.id)}>x</button>
             </div>
           )
         })}
