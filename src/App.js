@@ -10,7 +10,7 @@ export default function App() {
 
   const addTask = () => {
     const task = { 
-      id: todoList[todoList.length-1].id+,
+      id: todoList[todoList.length-1].id+1,
       taskName: newTask
     }
     const newTodoList = [...todoList, newTask];
